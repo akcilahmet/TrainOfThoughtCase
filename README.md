@@ -1,0 +1,2 @@
+# TrainOfThoughtCase
+repo created
