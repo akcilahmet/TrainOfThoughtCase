@@ -44,6 +44,8 @@ public class NodeController : MonoBehaviour
             contactSpline = connectedMainTwo;
             node.AddConnection(main,splinePropertiesMain.pointIndex);
             node.AddConnection(connectedMainTwo,splinePropertiesConnectedTwo.pointIndex);
+            splinePropertiesConnectedTwo.SetSwitchPoint();
+
          }
 
          if (clicked % 2 == 1)
@@ -54,7 +56,7 @@ public class NodeController : MonoBehaviour
             contactSpline = connectedMain;
             node.AddConnection(main,splinePropertiesMain.pointIndex);
             node.AddConnection(connectedMain,splinePropertiesConnected.pointIndex);
-           
+            splinePropertiesConnected.SetSwitchPoint();
             //junctionSwitch.SwitchActive();
          }
       }
