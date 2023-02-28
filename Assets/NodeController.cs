@@ -4,74 +4,92 @@ using System.Collections.Generic;
 using Dreamteck.Splines;
 using Dreamteck.Splines.Examples;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class NodeController : MonoBehaviour
 {
-   public Node node;
+   [SerializeField]private Node node;
   
-   public SplineComputer main;
-   public SplineComputer connectedMain;
-   public SplineComputer connectedMainTwo;
+   [SerializeField]private SplineComputer main;
+   [SerializeField]private SplineComputer junctionToConnected;
+   [SerializeField]private SplineComputer junctionToConnectedTwo;
+   
    public SplineComputer contactSpline;
    public int nodeMainPoint;
-  
    
-   public bool testttt;
-   public int clicked;
+   private int clicked;
 
    private SplineProperties splinePropertiesMain;
    private SplineProperties splinePropertiesConnected;
    private SplineProperties splinePropertiesConnectedTwo;
 
+   [Header("Scripts")] [Space(10)] [SerializeField]
+   private JunctionSwitchTriggerController _junctionSwitchTriggerController;
+
    private void Start()
    {
       splinePropertiesMain = main.GetComponent<SplineProperties>();
-      splinePropertiesConnected = connectedMain.GetComponent<SplineProperties>();
-      splinePropertiesConnectedTwo = connectedMainTwo.GetComponent<SplineProperties>();
+      splinePropertiesConnected = junctionToConnected.GetComponent<SplineProperties>();
+      splinePropertiesConnectedTwo = junctionToConnectedTwo.GetComponent<SplineProperties>();
+      
    }
 
    private void Update()
    {
-      if (Input.GetMouseButtonDown(0))
+      if (_junctionSwitchTriggerController.contactTo)
       {
-         clicked++;
-
-         if (clicked % 2 == 0)
+         if (Input.GetMouseButtonDown(0))
          {
-            node.ClearConnections();
-            ResetSplinePos();
-            
-            contactSpline = connectedMainTwo;
-            node.AddConnection(main,splinePropertiesMain.pointIndex);
-            node.AddConnection(connectedMainTwo,splinePropertiesConnectedTwo.pointIndex);
-            splinePropertiesConnectedTwo.SetSwitchPoint();
+            clicked++;
 
-         }
-
-         if (clicked % 2 == 1)
-         {
-            node.ClearConnections();
-            ResetSplinePosTwo();
+            if (clicked % 2 == 0)
+            {
+               ResetJunction();
+             
+              
             
-            contactSpline = connectedMain;
-            node.AddConnection(main,splinePropertiesMain.pointIndex);
-            node.AddConnection(connectedMain,splinePropertiesConnected.pointIndex);
-            splinePropertiesConnected.SetSwitchPoint();
-            //junctionSwitch.SwitchActive();
+               JunctionSwitchChanged(main,splinePropertiesMain,
+                  junctionToConnectedTwo,splinePropertiesConnectedTwo);
+            }
+
+            if (clicked % 2 == 1)
+            {
+               ResetJunction();
+              
+              
+
+               JunctionSwitchChanged(main,splinePropertiesMain,
+                  junctionToConnected,splinePropertiesConnected);
+            }
          }
       }
    }
 
-   private void ResetSplinePos()
+   void JunctionSwitchChanged(SplineComputer tempMain,SplineProperties tempMainProperties,
+      SplineComputer tempJunctionToConnected,SplineProperties tempJunctionConnectedProperties)
    {
-     // junctionSwitch.SwitchReset();
+      contactSpline = tempJunctionToConnected;
+      node.AddConnection(tempMain,tempMainProperties.pointIndex);
+      node.AddConnection(tempJunctionToConnected,tempJunctionConnectedProperties.pointIndex);
+      tempJunctionConnectedProperties.SetSwitchPoint();
+   }
+
+   private void ResetJunctionToConnectedSpline()
+   {
       splinePropertiesMain.SetNormalPointPos();
       splinePropertiesConnected.SetNormalPointPos();
    } 
-   private void ResetSplinePosTwo()
+   private void ResetJunctionToConnectedSplineTwo()
    {
-     // junctionSwitch.SwitchReset();
       splinePropertiesMain.SetNormalPointPos();
+      splinePropertiesConnectedTwo.SetNormalPointPos();
+   }
+
+   private void ResetJunction()
+   {
+      node.ClearConnections();
+      splinePropertiesMain.SetNormalPointPos();
+      splinePropertiesConnected.SetNormalPointPos();
       splinePropertiesConnectedTwo.SetNormalPointPos();
    }
 }

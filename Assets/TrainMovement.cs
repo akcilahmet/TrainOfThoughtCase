@@ -16,9 +16,7 @@ public class TrainMovement : MonoBehaviour
         follower = GetComponent<SplineFollower>();
         
     }
-
-   
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("node"))
@@ -33,14 +31,12 @@ public class TrainMovement : MonoBehaviour
         double nodePercent = (double) nodeController.nodeMainPoint / (follower.spline.pointCount - 1);
         double followerPercent = follower.UnclipPercent(follower.result.percent);
         float distancePastNode = follower.spline.CalculateLength(nodePercent, followerPercent);
-        Debug.Log("follower percent: " +followerPercent);
       
         
         follower.spline = nodeController.contactSpline;
         
         double newnodePercent = (double)0/ ( nodeController.contactSpline.pointCount-1 );
         double newPercent =  nodeController.contactSpline.Travel(newnodePercent, distancePastNode, follower.direction);
-        Debug.Log("new percent: " +newPercent);
 
         follower.SetPercent(newPercent);
     }
