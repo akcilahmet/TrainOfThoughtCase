@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Train : TrainFeatures
 {
-    public TrainType trainType;
+   
     [SerializeField] private MeshRenderer _meshRenderer;
     [SerializeField] private SplineFollower splineFollower;
   
@@ -15,6 +15,7 @@ public class Train : TrainFeatures
     public void TrainColorSet(Color tempColor)
     {
         _meshRenderer.material.color = tempColor;
+        
     }
     
     public void SplineAssignValue(SplineComputer targetSpline)

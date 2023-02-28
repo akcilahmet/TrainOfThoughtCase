@@ -21,10 +21,18 @@ public class ObjectPool : MonoBehaviour
   
    public static ObjectPool Instance { get; private set; }
  
-  
-   private void Start()
+   // her level için başarılı tren istasyona ulaştırma hedefi olsun
+   // bu Uı da gozuksun
+   // level tasarla
+   // 3 4 level yap finisle
+   private void Awake()
    {
       Instance = this;
+   }
+
+   private void Start()
+   {
+     
       
       originalTimer = timer;
       TrainsCreated();
@@ -32,13 +40,22 @@ public class ObjectPool : MonoBehaviour
 
    void TrainsCreated()
    {
-      for (int i = 0; i < 6; i++)
+      for (int i = 0; i < 10; i++)
       {
          GameObject go = Instantiate(trainPrefab, createdPos.transform.position,Quaternion.identity);
          Train goTrain = go.GetComponent<Train>();
        
          goTrain.SplineAssignValue(firstSpline);
-         goTrain.TrainColorSet(_levelSo.levels[0].colorList[Random.Range(0,_levelSo.levels[0].colorList.Count)]);
+
+         #region RandomCOlortypeSet
+
+         int randomColor=Random.Range(0,_levelSo.levels[0].colorList.Count);
+         goTrain.TrainColorSet(_levelSo.levels[LevelManager.Instance.levelIndex].colorList[randomColor]);
+         goTrain.trainType = _levelSo.levels[LevelManager.Instance.levelIndex].trainType[randomColor];
+
+         #endregion
+       
+        
          goTrain.TrainSetActiveState(false);
          go.transform.SetParent(transform);
        
@@ -89,8 +106,11 @@ public class ObjectPool : MonoBehaviour
       go.transform.position = createdPos.position;
       trains.Add(go);
       moveTrains.Remove(go);
-     tempTrain.TrainSetActiveState(false);
-
+      tempTrain.TrainSetActiveState(false);
+      
+      int randomColor=Random.Range(0,_levelSo.levels[0].colorList.Count);
+      tempTrain.TrainColorSet(_levelSo.levels[LevelManager.Instance.levelIndex].colorList[randomColor]);
+      tempTrain.trainType = _levelSo.levels[LevelManager.Instance.levelIndex].trainType[randomColor];
 
 
 

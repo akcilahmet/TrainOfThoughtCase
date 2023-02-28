@@ -4,13 +4,6 @@ using UnityEngine;
 
 public abstract class TrainFeatures : MonoBehaviour
 {
-   
-    public enum TrainType
-    {
-        red,
-        yellow,
-        blue,
-        orange,
-        green
-    }
+
+   public string trainType;
 }

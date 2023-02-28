@@ -13,19 +13,26 @@ MonoBehaviour:
   m_Name: LevelSO
   m_EditorClassIdentifier: 
   levels:
-  - trainCount: 2
+  - unlocked: 0
+    trainCount: 2
     colorList:
     - {r: 0.011263847, g: 0, b: 1, a: 1}
     - {r: 1, g: 0.89338535, b: 0, a: 1}
+    trainType:
+    - blue
+    - yellow
     levelPrefab: {fileID: 0}
-  - trainCount: 4
+  - unlocked: 0
+    trainCount: 4
     colorList:
     - {r: 0.011263847, g: 0, b: 1, a: 1}
     - {r: 1, g: 0.89338535, b: 0, a: 1}
     - {r: 0.5666342, g: 0, b: 1, a: 1}
     - {r: 0.24347973, g: 1, b: 0, a: 1}
+    trainType: []
     levelPrefab: {fileID: 0}
-  - trainCount: 6
+  - unlocked: 0
+    trainCount: 6
     colorList:
     - {r: 0.011263847, g: 0, b: 1, a: 1}
     - {r: 1, g: 0.89338535, b: 0, a: 1}
@@ -33,4 +40,5 @@ MonoBehaviour:
     - {r: 0.24347973, g: 1, b: 0, a: 1}
     - {r: 0, g: 0.9672723, b: 1, a: 1}
     - {r: 1, g: 0.26704967, b: 0, a: 1}
+    trainType: []
     levelPrefab: {fileID: 0}

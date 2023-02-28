@@ -12,8 +12,11 @@ public class LevelSO : ScriptableObject
 [Serializable]
 public class Level
 {
+    public bool unlocked;
     public int trainCount;
     public List<Color> colorList;
+    public List<string> trainType;
+    public List<(int, string)> mylist;
     public GameObject levelPrefab;
   
 

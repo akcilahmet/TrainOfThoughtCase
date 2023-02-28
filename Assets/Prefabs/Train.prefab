@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8057144827612905443}
+  - component: {fileID: 8057144827612905374}
   - component: {fileID: 8057144827612905444}
   - component: {fileID: 8057144827612905375}
   - component: {fileID: 8057144827612905442}
   - component: {fileID: 8057144827612905440}
   - component: {fileID: 8057144827612905441}
-  - component: {fileID: 8057144827612905374}
   m_Layer: 0
   m_Name: Train
   m_TagString: Untagged
@@ -37,6 +37,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8057144827612905374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8057144827612905445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296fbddb4df215d4cb79dafd425bbb4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainType: 0
+  _meshRenderer: {fileID: 665767512285095583}
+  splineFollower: {fileID: 8057144827612905442}
 --- !u!114 &8057144827612905444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,7 +404,7 @@ MonoBehaviour:
   autoStartPosition: 0
   follow: 1
   preserveUniformSpeedWithOffset: 0
-  _followSpeed: 3
+  _followSpeed: 5
   _followDuration: 1
   _startPosition: 0
   _speedModifier:
@@ -431,22 +446,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8057144827612905374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8057144827612905445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 296fbddb4df215d4cb79dafd425bbb4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trainColor: {r: 0.07457018, g: 0, b: 1, a: 1}
-  trainType: 0
-  _meshRenderer: {fileID: 665767512285095583}
-  splineFollower: {fileID: 8057144827612905442}
 --- !u!1001 &3822090917027985731
 PrefabInstance:
   m_ObjectHideFlags: 0
