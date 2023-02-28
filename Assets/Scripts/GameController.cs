@@ -7,8 +7,9 @@ public class GameController : MonoBehaviour
    public bool gameFinish;
    public int score;
    public int finishScore;
-   
-   
+   [SerializeField] private LevelCreator _levelCreator;
+ 
+
    public static GameController Instance { get; private set; }
     
    private void Awake()
@@ -29,6 +30,7 @@ public class GameController : MonoBehaviour
       if (score >= finishScore)
       {
          gameFinish = true;
+         _levelCreator.LevelSOUpdate();
          return gameFinish;
       }
 

@@ -24,4 +24,10 @@ public class LevelCreator : MonoBehaviour
       _objectPool.firstSpline = go.GetComponent<TrainTrackSetup>().startSpline;
       go.GetComponent<TrainTrackSetup>().junctionSwitchTriggerController.camera = cam;
    }
+
+   public void LevelSOUpdate()
+   {
+      PlayerPrefs.SetInt("levelIndex",PlayerPrefs.GetInt("levelIndex")+1);
+      levelSo.levels[PlayerPrefs.GetInt("levelIndex")].unlocked = false;
+   }
 }

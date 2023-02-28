@@ -14,10 +14,7 @@ public class LevelsSelectedCanvasController : MonoBehaviour
        SetupLevelBtn();
    }
 
-   private void Start()
-   {
-       //LevelSelectedBtnRunTimeUpdate();
-   }
+  
 
    public void LevelsSelectedPanelState(bool temp)
    {
@@ -34,11 +31,5 @@ public class LevelsSelectedCanvasController : MonoBehaviour
        }
    }
 
-   void LevelSelectedBtnRunTimeUpdate()// levelselected aacıldıgında guncelleme yapılacak
-   {
-       foreach (var VARIABLE in levelSelectedBtnList)
-       {
-           VARIABLE.BtnStateRunTimeUpdate();
-       }
-   }
+  
 }

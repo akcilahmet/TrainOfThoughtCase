@@ -12,7 +12,7 @@ public class LevelSelectedBtnController : MonoBehaviour
    public bool unlocked;
    [SerializeField] private TMP_Text levelTxt;
    private Button _button;
-   [SerializeField] private int selectedLevelIndex;
+  
 
    private void Start()
    {
@@ -36,19 +36,9 @@ public class LevelSelectedBtnController : MonoBehaviour
 
    void BtnClicked()
    {
-      PlayerPrefs.SetInt("levelIndex",selectedLevelIndex);
+      PlayerPrefs.SetInt("levelIndex",levelIndex);
       SceneManager.LoadScene("Level");
    }
 
-   public void BtnStateRunTimeUpdate()
-   {
-      if (unlocked)
-      {
-         _button.interactable = false;
-      }
-      else
-      {
-         _button.interactable = true;
-      }
-   }
+ 
 }
