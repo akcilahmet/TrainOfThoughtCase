@@ -32,9 +32,8 @@ public class ObjectPool : MonoBehaviour
 
    private void Start()
    {
-     
-      
       originalTimer = timer;
+      timer = 2;
       TrainsCreated();
    }
 

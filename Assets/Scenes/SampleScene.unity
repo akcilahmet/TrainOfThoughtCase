@@ -1674,6 +1674,7 @@ MonoBehaviour:
   levelSo: {fileID: 11400000, guid: 9d44bd8a99d256c46b448e16083f3884, type: 2}
   canvasController: {fileID: 748010435}
   _levelManager: {fileID: 1484083554}
+  _gameController: {fileID: 1484083557}
 --- !u!114 &1484083557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1688,6 +1689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameFinish: 0
   score: 0
+  finishScore: 0
 --- !u!1 &1532939664
 GameObject:
   m_ObjectHideFlags: 0

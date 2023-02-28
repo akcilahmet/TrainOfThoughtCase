@@ -8,7 +8,7 @@ public class LevelCreator : MonoBehaviour
    [SerializeField] private LevelSO levelSo;
    [SerializeField] private CanvasController canvasController;
    [SerializeField] private LevelManager _levelManager;
-
+   [SerializeField] private GameController _gameController;
    private void Awake()
    {
       LevelSetup();
@@ -16,6 +16,8 @@ public class LevelCreator : MonoBehaviour
 
    void LevelSetup()
    {
+      _gameController.finishScore = levelSo.levels[_levelManager.levelIndex].trainCount;
       canvasController.CorrectTxtSet(levelSo.levels[_levelManager.levelIndex].trainCount);
+      
    }
 }

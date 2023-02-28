@@ -22,6 +22,7 @@ public class TrainTriggerManager : MonoBehaviour
             if (_train.trainType==(other.gameObject.GetComponent<Station>()._type.ToString()))
             {
                 GameController.Instance.ScoreUpdate(+1);
+                GameController.Instance.GameFinishControl();
             }
             else
             {

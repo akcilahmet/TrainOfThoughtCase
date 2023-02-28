@@ -6,6 +6,8 @@ public class GameController : MonoBehaviour
 {
    public bool gameFinish;
    public int score;
+   public int finishScore;
+   
    
    public static GameController Instance { get; private set; }
     
@@ -21,4 +23,18 @@ public class GameController : MonoBehaviour
       FindObjectOfType<CanvasController>().CorrextTextUpdate(score);
 
    }
+
+   public bool GameFinishControl()
+   {
+      if (score >= finishScore)
+      {
+         gameFinish = true;
+         return gameFinish;
+      }
+
+      gameFinish = false;
+      return gameFinish;
+   }
+
+  
 }
