@@ -11,6 +11,7 @@ public class NodeController : MonoBehaviour
    [SerializeField] private bool junctionOne;
    [SerializeField] private bool junctionTwo;
    [SerializeField] private bool junctionTree;
+   [SerializeField] private bool junctionFour;
    [SerializeField]private Node node;
   
    [SerializeField]private SplineComputer main;
@@ -92,6 +93,13 @@ public class NodeController : MonoBehaviour
          contactSpline = tempJunctionToConnected;
          node.AddConnection(tempMain,tempMainProperties.JunctionpointTree);
          node.AddConnection(tempJunctionToConnected,tempJunctionConnectedProperties.JunctionpointTree);
+         tempJunctionConnectedProperties.SetSwitchPoint();
+      }
+      if (junctionFour)
+      {
+         contactSpline = tempJunctionToConnected;
+         node.AddConnection(tempMain,tempMainProperties.JunctionpointFour);
+         node.AddConnection(tempJunctionToConnected,tempJunctionConnectedProperties.JunctionpointFour);
          tempJunctionConnectedProperties.SetSwitchPoint();
       }
      

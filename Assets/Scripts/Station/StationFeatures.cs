@@ -11,6 +11,7 @@ public abstract class StationFeatures : MonoBehaviour
       yellow,
       blue,
       orange,
-      green
+      green,
+      pink
    }
 }

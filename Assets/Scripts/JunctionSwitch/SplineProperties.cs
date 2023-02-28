@@ -12,6 +12,7 @@ public class SplineProperties : MonoBehaviour
    public int pointIndex;
    public int JunctionpointTwo;
    public int JunctionpointTree;
+   public int JunctionpointFour;
   
    [Header("Tangent set")] [Space(10)]
    public Vector3 originalTangent;

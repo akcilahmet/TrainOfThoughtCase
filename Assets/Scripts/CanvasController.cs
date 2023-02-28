@@ -12,7 +12,7 @@ public class CanvasController : MonoBehaviour
    
    public void CorrectTxtSet(int temp)
    {
-      correctTxt.text = "Correct 0 of " + temp.ToString();
+      correctTxt.text = "0 / " + temp.ToString();
       correcttarget = temp;
    }
 
@@ -34,7 +34,7 @@ public class CanvasController : MonoBehaviour
       {
          temp = 0;
       }
-      correctTxt.text = "Correct "+temp.ToString()+" of " + correcttarget.ToString();
+      correctTxt.text = temp.ToString()+" / " + correcttarget.ToString();
 
    }
 
