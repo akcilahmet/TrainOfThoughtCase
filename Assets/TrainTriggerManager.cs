@@ -10,6 +10,7 @@ public class TrainTriggerManager : MonoBehaviour
         if (other.gameObject.CompareTag("station"))
         {
             Debug.Log("station reached");
+            ObjectPool.Instance.ReturnTheObjectToThePool(this.gameObject);
         }
     }
 }

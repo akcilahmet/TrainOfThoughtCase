@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class TrainFeatures : MonoBehaviour
 {
-    public Color trainColor;
+   
     public enum TrainType
     {
         red,
