@@ -22,7 +22,8 @@ MonoBehaviour:
     - blue
     - yellow
     levelPrefab: {fileID: 5341355614818370212, guid: f07de9982e100f7448989fbc8e3f8c58, type: 3}
-  - unlocked: 0
+    cam: {fileID: 6637111081201976809, guid: d22a17bc916d98c4e8abe9206c9dc72f, type: 3}
+  - unlocked: 1
     trainCount: 4
     colorList:
     - {r: 0.011263847, g: 0, b: 1, a: 1}
@@ -35,8 +36,9 @@ MonoBehaviour:
     - red
     - green
     levelPrefab: {fileID: 5557051676674281615, guid: 33212563169e58d4c89450e59ee02f16, type: 3}
-  - unlocked: 0
-    trainCount: 4
+    cam: {fileID: 6824559053719816753, guid: 1211315d75edb3240882c86b5b311a73, type: 3}
+  - unlocked: 1
+    trainCount: 6
     colorList:
     - {r: 0.011263847, g: 0, b: 1, a: 1}
     - {r: 0.9718712, g: 1, b: 0.042452812, a: 1}
@@ -49,5 +51,7 @@ MonoBehaviour:
     - yellow
     - red
     - green
+    - pink
     - orange
     levelPrefab: {fileID: 3353801162755242274, guid: 79b661c00a673894f9dba153607280ec, type: 3}
+    cam: {fileID: 8646007232921088878, guid: 7e8dfc10b21d5f646bcc1a87db8d9abb, type: 3}

@@ -18,6 +18,6 @@ public class Level
     public List<string> trainType;
     public List<(int, string)> mylist;
     public GameObject levelPrefab;
-  
+    public GameObject cam;
 
 }

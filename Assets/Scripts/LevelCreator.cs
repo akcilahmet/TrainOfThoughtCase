@@ -10,7 +10,7 @@ public class LevelCreator : MonoBehaviour
    [SerializeField] private LevelManager _levelManager;
    [SerializeField] private GameController _gameController;
    [SerializeField] private ObjectPool _objectPool;
-   [SerializeField] private Camera cam;
+   private int levelIndex;
    private void Awake()
    {
       LevelSetup();
@@ -26,16 +26,19 @@ public class LevelCreator : MonoBehaviour
       _gameController.gameFinishEvent -= LevelSOUpdate;
    }
 
+  
    void LevelSetup()
    {
-      _gameController.finishScore = levelSo.levels[_levelManager.levelIndex].trainCount;
-      canvasController.CorrectTxtSet(levelSo.levels[_levelManager.levelIndex].trainCount);
-      GameObject go = Instantiate(levelSo.levels[_levelManager.levelIndex].levelPrefab);
+      levelIndex = _levelManager.levelIndex;
+      _gameController.finishScore = levelSo.levels[levelIndex].trainCount;
+      canvasController.CorrectTxtSet(levelSo.levels[levelIndex].trainCount);
+      GameObject go = Instantiate(levelSo.levels[levelIndex].levelPrefab);
       _objectPool.firstSpline = go.GetComponent<TrainTrackSetup>().startSpline;
+      GameObject camera = Instantiate(levelSo.levels[levelIndex].cam);
       
       foreach (var VARIABLE in go.GetComponent<TrainTrackSetup>().junctionSwitchTriggerController)
       {
-         VARIABLE.camera = cam;
+         VARIABLE.camera = camera.GetComponent<Camera>();
 
       }
    }
@@ -43,7 +46,12 @@ public class LevelCreator : MonoBehaviour
    public void LevelSOUpdate()
    {
       Debug.Log("ahemttt2");
-      PlayerPrefs.SetInt("levelIndex",PlayerPrefs.GetInt("levelIndex")+1);
-      levelSo.levels[PlayerPrefs.GetInt("levelIndex")].unlocked = false;
+      if (PlayerPrefs.GetInt("levelIndex") < levelSo.levels.Count-1)
+      {
+         PlayerPrefs.SetInt("levelIndex",PlayerPrefs.GetInt("levelIndex")+1);
+         levelSo.levels[PlayerPrefs.GetInt("levelIndex")].unlocked = false;
+      }
+     
+     
    }
 }
