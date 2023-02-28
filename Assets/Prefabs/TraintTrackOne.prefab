@@ -530,7 +530,7 @@ MonoBehaviour:
   billboardThickness: 1
   isNewlyCreated: 0
   multithreaded: 0
-  rebuildOnAwake: 0
+  rebuildOnAwake: 1
   updateMode: 0
   triggerGroups: []
   spline:
@@ -11958,7 +11958,7 @@ MonoBehaviour:
   billboardThickness: 1
   isNewlyCreated: 0
   multithreaded: 0
-  rebuildOnAwake: 0
+  rebuildOnAwake: 1
   updateMode: 0
   triggerGroups: []
   spline:
@@ -22832,7 +22832,7 @@ MonoBehaviour:
   billboardThickness: 1
   isNewlyCreated: 0
   multithreaded: 0
-  rebuildOnAwake: 0
+  rebuildOnAwake: 1
   updateMode: 0
   triggerGroups: []
   spline:
