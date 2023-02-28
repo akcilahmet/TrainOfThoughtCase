@@ -18,13 +18,14 @@ public class JunctionSwitchTriggerController : MonoBehaviour
       
       if (Physics.Raycast(ray, out hit,Mathf.Infinity,mask)) {
 
-         contactTo = true;
+         hit.transform.GetComponent<JunctionSwitchTriggerController>().contactTo = true;
       }
       else
       {
-         {
-            contactTo = false;
-         }
+         
+         this.contactTo = false;
+
+         
       }
    }
 }

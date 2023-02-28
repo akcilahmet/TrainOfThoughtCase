@@ -8,6 +8,9 @@ using UnityEngine.Serialization;
 
 public class NodeController : MonoBehaviour
 {
+   [SerializeField] private bool junctionOne;
+   [SerializeField] private bool junctionTwo;
+   [SerializeField] private bool junctionTree;
    [SerializeField]private Node node;
   
    [SerializeField]private SplineComputer main;
@@ -68,10 +71,30 @@ public class NodeController : MonoBehaviour
    void JunctionSwitchChanged(SplineComputer tempMain,SplineProperties tempMainProperties,
       SplineComputer tempJunctionToConnected,SplineProperties tempJunctionConnectedProperties)
    {
-      contactSpline = tempJunctionToConnected;
-      node.AddConnection(tempMain,tempMainProperties.pointIndex);
-      node.AddConnection(tempJunctionToConnected,tempJunctionConnectedProperties.pointIndex);
-      tempJunctionConnectedProperties.SetSwitchPoint();
+      if (junctionOne)
+      {
+         contactSpline = tempJunctionToConnected;
+         node.AddConnection(tempMain,tempMainProperties.pointIndex);
+         node.AddConnection(tempJunctionToConnected,tempJunctionConnectedProperties.pointIndex);
+         tempJunctionConnectedProperties.SetSwitchPoint();
+      }
+
+      if (junctionTwo)
+      {
+         contactSpline = tempJunctionToConnected;
+         node.AddConnection(tempMain,tempMainProperties.JunctionpointTwo);
+         node.AddConnection(tempJunctionToConnected,tempJunctionConnectedProperties.JunctionpointTwo);
+         tempJunctionConnectedProperties.SetSwitchPoint();
+      }
+
+      if (junctionTree)
+      {
+         contactSpline = tempJunctionToConnected;
+         node.AddConnection(tempMain,tempMainProperties.JunctionpointTree);
+         node.AddConnection(tempJunctionToConnected,tempJunctionConnectedProperties.JunctionpointTree);
+         tempJunctionConnectedProperties.SetSwitchPoint();
+      }
+     
    }
 
    private void ResetJunctionToConnectedSpline()

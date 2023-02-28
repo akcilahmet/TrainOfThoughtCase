@@ -10,6 +10,8 @@ public class SplineProperties : MonoBehaviour
    [SerializeField] private bool orginalTangetUse;
    private SplineComputer _splineComputer;
    public int pointIndex;
+   public int JunctionpointTwo;
+   public int JunctionpointTree;
   
    [Header("Tangent set")] [Space(10)]
    public Vector3 originalTangent;

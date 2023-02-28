@@ -5,6 +5,6 @@ using UnityEngine;
 
 public class TrainTrackSetup : MonoBehaviour
 {
-   public JunctionSwitchTriggerController junctionSwitchTriggerController;
+   public List<JunctionSwitchTriggerController> junctionSwitchTriggerController;
    public SplineComputer startSpline;
 }

@@ -32,7 +32,12 @@ public class LevelCreator : MonoBehaviour
       canvasController.CorrectTxtSet(levelSo.levels[_levelManager.levelIndex].trainCount);
       GameObject go = Instantiate(levelSo.levels[_levelManager.levelIndex].levelPrefab);
       _objectPool.firstSpline = go.GetComponent<TrainTrackSetup>().startSpline;
-      go.GetComponent<TrainTrackSetup>().junctionSwitchTriggerController.camera = cam;
+      
+      foreach (var VARIABLE in go.GetComponent<TrainTrackSetup>().junctionSwitchTriggerController)
+      {
+         VARIABLE.camera = cam;
+
+      }
    }
 
    public void LevelSOUpdate()

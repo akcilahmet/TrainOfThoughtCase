@@ -11577,6 +11577,8 @@ MonoBehaviour:
   enterValueManuelPos: 0
   orginalTangetUse: 1
   pointIndex: 4
+  JunctionpointTwo: 0
+  JunctionpointTree: 0
   originalTangent: {x: 0, y: 0, z: 0}
   originalTangent2: {x: 0, y: 0, z: 0}
   targetTangent: {x: 0, y: 0, z: 0}
@@ -22559,6 +22561,8 @@ MonoBehaviour:
   enterValueManuelPos: 1
   orginalTangetUse: 0
   pointIndex: 0
+  JunctionpointTwo: 0
+  JunctionpointTree: 0
   originalTangent: {x: -336, y: 0, z: 210}
   originalTangent2: {x: -326, y: 0, z: 210}
   targetTangent: {x: -339, y: 0, z: 211}
@@ -33431,6 +33435,8 @@ MonoBehaviour:
   enterValueManuelPos: 0
   orginalTangetUse: 0
   pointIndex: 0
+  JunctionpointTwo: 0
+  JunctionpointTree: 0
   originalTangent: {x: 0, y: 0, z: 0}
   originalTangent2: {x: 0, y: 0, z: 0}
   targetTangent: {x: -339, y: 0, z: 210}
@@ -33700,7 +33706,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87a792af9217a6498d451ff986c2a8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  junctionSwitchTriggerController: {fileID: 5341355614192631921}
+  junctionSwitchTriggerController:
+  - {fileID: 5341355614192631921}
   startSpline: {fileID: 5341355614256819373}
 --- !u!1 &5341355615688849648
 GameObject:
@@ -33760,6 +33767,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4afdb5ab9b7d7fc40b3e2e89f60cba0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  junctionOne: 1
+  junctionTwo: 0
+  junctionTree: 0
   node: {fileID: 5341355615688849655}
   main: {fileID: 5341355614256819373}
   junctionToConnected: {fileID: 5341355614499072431}

@@ -21,10 +21,7 @@ public class ObjectPool : MonoBehaviour
   
    public static ObjectPool Instance { get; private set; }
  
-   // her level için başarılı tren istasyona ulaştırma hedefi olsun
-   // bu Uı da gozuksun
-   // level tasarla
-   // 3 4 level yap finisle
+  
    private void Awake()
    {
       Instance = this;
@@ -37,10 +34,12 @@ public class ObjectPool : MonoBehaviour
       TrainsCreated();
    }
 
+   private int levelIndex;
    void TrainsCreated()
    {
       for (int i = 0; i < 10; i++)
       {
+         levelIndex = LevelManager.Instance.levelIndex;
          GameObject go = Instantiate(trainPrefab, createdPos.transform.position,Quaternion.identity);
          Train goTrain = go.GetComponent<Train>();
        
@@ -48,9 +47,18 @@ public class ObjectPool : MonoBehaviour
 
          #region RandomCOlortypeSet
 
-         int randomColor=Random.Range(0,_levelSo.levels[0].colorList.Count);
-         goTrain.TrainColorSet(_levelSo.levels[LevelManager.Instance.levelIndex].colorList[randomColor]);
-         goTrain.trainType = _levelSo.levels[LevelManager.Instance.levelIndex].trainType[randomColor];
+         int randomColor;
+         if (i > _levelSo.levels[levelIndex].colorList.Count - 1)
+         {
+            randomColor=Random.Range(0,_levelSo.levels[levelIndex].colorList.Count);
+         }
+         else
+         {
+            randomColor = i;
+         }
+         
+         goTrain.TrainColorSet(_levelSo.levels[levelIndex].colorList[randomColor]);
+         goTrain.trainType = _levelSo.levels[levelIndex].trainType[randomColor];
 
          #endregion
        
@@ -64,7 +72,6 @@ public class ObjectPool : MonoBehaviour
 
    private void Update()
    {
-      // oyun basladıysa kontrolü atılacak
       TrainMoveControl();
    }
 
@@ -97,9 +104,9 @@ public class ObjectPool : MonoBehaviour
      
    }
 
-   public void ReturnTheObjectToThePool(GameObject go) // station contact to 
+   public void ReturnTheObjectToThePool(GameObject go) 
    {
-
+      levelIndex = LevelManager.Instance.levelIndex;
       Train tempTrain = go.GetComponent<Train>();
       tempTrain.ResetTrain();
       go.transform.position = createdPos.position;
@@ -107,9 +114,9 @@ public class ObjectPool : MonoBehaviour
       moveTrains.Remove(go);
       tempTrain.TrainSetActiveState(false);
       
-      int randomColor=Random.Range(0,_levelSo.levels[0].colorList.Count);
-      tempTrain.TrainColorSet(_levelSo.levels[LevelManager.Instance.levelIndex].colorList[randomColor]);
-      tempTrain.trainType = _levelSo.levels[LevelManager.Instance.levelIndex].trainType[randomColor];
+      int randomColor=Random.Range(0,_levelSo.levels[levelIndex].colorList.Count);
+      tempTrain.TrainColorSet(_levelSo.levels[levelIndex].colorList[randomColor]);
+      tempTrain.trainType = _levelSo.levels[levelIndex].trainType[randomColor];
 
 
 

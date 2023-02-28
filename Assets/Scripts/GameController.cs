@@ -23,6 +23,10 @@ public class GameController : MonoBehaviour
    public void ScoreUpdate(int temp)
    {
       score += temp;
+      if (score <= 0)
+      {
+         score = 0;
+      }
       FindObjectOfType<CanvasController>().CorrextTextUpdate(score);
 
    }
