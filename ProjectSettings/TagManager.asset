@@ -6,6 +6,7 @@ TagManager:
   tags:
   - node
   - switchCollider
+  - station
   layers:
   - Default
   - TransparentFX
