@@ -1374,7 +1374,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5341355614256819374}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -11662,6 +11662,7 @@ MonoBehaviour:
   pointIndex: 4
   JunctionpointTwo: 0
   JunctionpointTree: 0
+  JunctionpointFour: 0
   originalTangent: {x: 0, y: 0, z: 0}
   originalTangent2: {x: 0, y: 0, z: 0}
   targetTangent: {x: 0, y: 0, z: 0}
@@ -12466,7 +12467,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5341355614469062836}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -22646,6 +22647,7 @@ MonoBehaviour:
   pointIndex: 0
   JunctionpointTwo: 0
   JunctionpointTree: 0
+  JunctionpointFour: 0
   originalTangent: {x: -336, y: 0, z: 210}
   originalTangent2: {x: -326, y: 0, z: 210}
   targetTangent: {x: -339, y: 0, z: 211}
@@ -23340,7 +23342,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5341355614499072424}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -33520,6 +33522,7 @@ MonoBehaviour:
   pointIndex: 0
   JunctionpointTwo: 0
   JunctionpointTree: 0
+  JunctionpointFour: 0
   originalTangent: {x: 0, y: 0, z: 0}
   originalTangent2: {x: 0, y: 0, z: 0}
   targetTangent: {x: -339, y: 0, z: 210}
@@ -33853,6 +33856,7 @@ MonoBehaviour:
   junctionOne: 1
   junctionTwo: 0
   junctionTree: 0
+  junctionFour: 0
   node: {fileID: 5341355615688849655}
   main: {fileID: 5341355614256819373}
   junctionToConnected: {fileID: 5341355614499072431}

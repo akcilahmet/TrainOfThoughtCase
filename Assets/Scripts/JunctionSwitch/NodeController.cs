@@ -72,6 +72,7 @@ public class NodeController : MonoBehaviour
    void JunctionSwitchChanged(SplineComputer tempMain,SplineProperties tempMainProperties,
       SplineComputer tempJunctionToConnected,SplineProperties tempJunctionConnectedProperties)
    {
+      
       if (junctionOne)
       {
          contactSpline = tempJunctionToConnected;
@@ -102,6 +103,8 @@ public class NodeController : MonoBehaviour
          node.AddConnection(tempJunctionToConnected,tempJunctionConnectedProperties.JunctionpointFour);
          tempJunctionConnectedProperties.SetSwitchPoint();
       }
+     
+
      
    }
 
