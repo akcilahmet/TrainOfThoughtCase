@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class ObjectPool : MonoBehaviour
 {
    [SerializeField] private LevelSO _levelSo;
-   [SerializeField] private SplineComputer firstSpline;
+   public SplineComputer firstSpline;
    [SerializeField] private GameObject trainPrefab;
    [SerializeField] private Transform createdPos;
    [SerializeField] private List<GameObject> trains;

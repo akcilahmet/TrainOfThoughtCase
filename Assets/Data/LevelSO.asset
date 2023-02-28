@@ -21,7 +21,7 @@ MonoBehaviour:
     trainType:
     - blue
     - yellow
-    levelPrefab: {fileID: 0}
+    levelPrefab: {fileID: 5341355614818370212, guid: f07de9982e100f7448989fbc8e3f8c58, type: 3}
   - unlocked: 0
     trainCount: 4
     colorList:
