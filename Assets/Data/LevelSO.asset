@@ -22,7 +22,7 @@ MonoBehaviour:
     - blue
     - yellow
     levelPrefab: {fileID: 5341355614818370212, guid: f07de9982e100f7448989fbc8e3f8c58, type: 3}
-  - unlocked: 0
+  - unlocked: 1
     trainCount: 4
     colorList:
     - {r: 0.011263847, g: 0, b: 1, a: 1}
@@ -31,7 +31,40 @@ MonoBehaviour:
     - {r: 0.24347973, g: 1, b: 0, a: 1}
     trainType: []
     levelPrefab: {fileID: 0}
-  - unlocked: 0
+  - unlocked: 1
+    trainCount: 6
+    colorList:
+    - {r: 0.011263847, g: 0, b: 1, a: 1}
+    - {r: 1, g: 0.89338535, b: 0, a: 1}
+    - {r: 0.5666342, g: 0, b: 1, a: 1}
+    - {r: 0.24347973, g: 1, b: 0, a: 1}
+    - {r: 0, g: 0.9672723, b: 1, a: 1}
+    - {r: 1, g: 0.26704967, b: 0, a: 1}
+    trainType: []
+    levelPrefab: {fileID: 0}
+  - unlocked: 1
+    trainCount: 6
+    colorList:
+    - {r: 0.011263847, g: 0, b: 1, a: 1}
+    - {r: 1, g: 0.89338535, b: 0, a: 1}
+    - {r: 0.5666342, g: 0, b: 1, a: 1}
+    - {r: 0.24347973, g: 1, b: 0, a: 1}
+    - {r: 0, g: 0.9672723, b: 1, a: 1}
+    - {r: 1, g: 0.26704967, b: 0, a: 1}
+    trainType: []
+    levelPrefab: {fileID: 0}
+  - unlocked: 1
+    trainCount: 6
+    colorList:
+    - {r: 0.011263847, g: 0, b: 1, a: 1}
+    - {r: 1, g: 0.89338535, b: 0, a: 1}
+    - {r: 0.5666342, g: 0, b: 1, a: 1}
+    - {r: 0.24347973, g: 1, b: 0, a: 1}
+    - {r: 0, g: 0.9672723, b: 1, a: 1}
+    - {r: 1, g: 0.26704967, b: 0, a: 1}
+    trainType: []
+    levelPrefab: {fileID: 0}
+  - unlocked: 1
     trainCount: 6
     colorList:
     - {r: 0.011263847, g: 0, b: 1, a: 1}

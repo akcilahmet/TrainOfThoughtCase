@@ -10,7 +10,9 @@ public class LevelManager : MonoBehaviour
     
     private void Awake()
     {
+       
         Instance = this;
        
+        levelIndex = PlayerPrefs.GetInt("levelIndex");
     }
 }
