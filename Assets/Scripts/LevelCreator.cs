@@ -16,6 +16,16 @@ public class LevelCreator : MonoBehaviour
       LevelSetup();
    }
 
+   private void OnEnable()
+   {
+      _gameController.gameFinishEvent += LevelSOUpdate;
+   }
+
+   private void OnDisable()
+   {
+      _gameController.gameFinishEvent -= LevelSOUpdate;
+   }
+
    void LevelSetup()
    {
       _gameController.finishScore = levelSo.levels[_levelManager.levelIndex].trainCount;
@@ -27,6 +37,7 @@ public class LevelCreator : MonoBehaviour
 
    public void LevelSOUpdate()
    {
+      Debug.Log("ahemttt2");
       PlayerPrefs.SetInt("levelIndex",PlayerPrefs.GetInt("levelIndex")+1);
       levelSo.levels[PlayerPrefs.GetInt("levelIndex")].unlocked = false;
    }

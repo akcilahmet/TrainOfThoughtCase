@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &73777250
 RectTransform:
   m_ObjectHideFlags: 0
@@ -756,6 +756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctTxt: {fileID: 99895847}
+  nextBtn: {fileID: 73777249}
 --- !u!1 &844230625
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,7 +1170,6 @@ MonoBehaviour:
   gameFinish: 0
   score: 0
   finishScore: 0
-  _levelCreator: {fileID: 1484083556}
 --- !u!1 &1532939664
 GameObject:
   m_ObjectHideFlags: 0

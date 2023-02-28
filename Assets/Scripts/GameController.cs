@@ -7,15 +7,17 @@ public class GameController : MonoBehaviour
    public bool gameFinish;
    public int score;
    public int finishScore;
-   [SerializeField] private LevelCreator _levelCreator;
- 
-
+  
+   public delegate void GameFinish();
+   
+   public GameFinish gameFinishEvent;
+   
    public static GameController Instance { get; private set; }
     
    private void Awake()
    {
       Instance = this;
-       
+      Time.timeScale = 1;
    }
 
    public void ScoreUpdate(int temp)
@@ -30,7 +32,8 @@ public class GameController : MonoBehaviour
       if (score >= finishScore)
       {
          gameFinish = true;
-         _levelCreator.LevelSOUpdate();
+         gameFinishEvent?.Invoke();
+         Time.timeScale = 0;
          return gameFinish;
       }
 
